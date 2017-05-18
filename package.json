@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server/server.js",
     "knex": "knex",
-    "heroku-postbuild": "knex migrate:rollback; knex migrate:latest; knex seed:run;",
+    "heroku-postbuild": "knex --knexfile migrate:rollback; knex --knexfile migrate:latest; knex --knexfile seed:run;",
     "nodemon": "node server/server.js"
   },
   "engines": {
