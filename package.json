@@ -4,8 +4,13 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon server/server.js",
-    "test": "mocha"
+    "start": "node server/server.js",
+    "knex": "knex",
+    "heroku-postbuild": "knex migrate:rollback; knex migrate:latest; knex seed:run;",
+    "nodemon": "node server/server.js"
+  },
+  "engines": {
+    "node": "v7.9.0"
   },
   "keywords": [],
   "author": "",
